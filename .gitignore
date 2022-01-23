@@ -143,3 +143,7 @@ node_modules
 explorer/static/bundles
 .idea
 .DS_Store
+
+# docker data dir
+postgres-data
+redis-data
