@@ -13,16 +13,16 @@ from explorer.models import db
 def create_app():
     app = Flask(__name__)
     app.config.update(
-        SQLALCHEMY_DATABASE_URI=os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://localhost:5432/hsexplorer'),
+        SQLALCHEMY_DATABASE_URI=os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://0.0.0.0:5432/hsexplorer'),
         SQLALCHEMY_ECHO=os.getenv('SQLALCHEMY_ECHO', '') == '1',
         SECRET_KEY=os.getenv('SECRET_KEY', ''),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
-        HSD_HOST=os.getenv('HSD_HOST', 'http://localhost:12037'),
+        HSD_HOST=os.getenv('HSD_HOST', 'http://0.0.0.0:12037'),
         HSD_API_KEY=os.getenv('HSD_API_KEY', None),
         TEMPLATES_AUTO_RELOAD=os.getenv('FLASK_ENV', '') == 'development',
         BUNDLES_AUTO_RELOAD=os.getenv('FLASK_ENV', '') == 'development',
         PERFORM_CACHING=os.getenv('FLASK_ENV', '') != 'development',
-        REDIS_URL=os.getenv('REDIS_URL', 'redis://localhost:6379'),
+        REDIS_URL=os.getenv('REDIS_URL', 'redis://0.0.0.0:6379'),
         MANAGEMENT_KEY=os.getenv('MANAGEMENT_KEY', '')
     )
 
